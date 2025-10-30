@@ -1,0 +1,72 @@
+import { motion } from "framer-motion";
+import { FaDownload, FaWhatsapp } from "react-icons/fa";
+
+// 📁 coloque o PDF em src/assets/pdf/mx15.pdf
+import mx15pdf from "../assets/pdf/mx15.pdf";
+import mx15img from "../assets/img/mx15.jpeg"; // 📁 coloque a imagem do produto
+
+export default function ProdutoMX15() {
+  const whatsappLink = `https://wa.me/555199851530?text=Olá! Gostaria de saber mais sobre o Micro Switch MX15.`;
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = mx15pdf;
+    link.download = "micro-switch-mx15-starmot.pdf";
+    link.click();
+  };
+
+  return (
+    <section className="w-full bg-white py-20 px-6 text-[#1b3357] flex flex-col items-center">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center mb-12">
+        {/* IMAGEM */}
+        <motion.img
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          src={mx15img}
+          alt="Micro Switch MX15"
+          className="w-full max-w-md mx-auto rounded-xl shadow-lg border"
+        />
+
+        {/* TEXTO */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Micro Switch MX15</h2>
+          <p className="text-gray-600 mb-6">
+            O Micro Switch MX15 oferece alta durabilidade, precisão de acionamento e resistência
+            para aplicações industriais exigentes. Ideal para automação, máquinas industriais e sistemas
+            de controle elétrico.
+          </p>
+
+          <button
+            onClick={handleDownload}
+            className="flex items-center gap-2 bg-[#1b3357] text-white px-6 py-3 rounded-xl hover:scale-105 transition shadow-md hover:shadow-lg w-fit mb-4"
+          >
+            <FaDownload size={18} /> Baixar PDF
+          </button>
+          
+          <a
+            href={whatsappLink}
+            target="_blank"
+            className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl hover:scale-105 transition shadow-md hover:shadow-lg w-fit"
+          >
+            <FaWhatsapp size={20} /> Entrar em contato
+          </a>
+        </motion.div>
+      </div>
+
+      {/* VISUALIZAÇÃO EMBUTIDA DO PDF */}
+      <motion.iframe
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        src={mx15pdf}
+        className="w-full max-w-5xl h-[600px] border rounded-xl shadow-lg"
+        title="Catálogo Micro Switch MX15"
+      />
+    </section>
+  );
+}
