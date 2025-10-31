@@ -14,7 +14,7 @@ export default function HeroGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className='bg-gray-100 pb-3'>
       {/* Imagem principal */}
       <Swiper
         modules={[Navigation, Thumbs, Autoplay]}
