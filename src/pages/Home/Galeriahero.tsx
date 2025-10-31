@@ -2,9 +2,7 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import 'swiper/swiper-bundle.css';
 
 const images = [
   '/imgHero/video1.mp4',
@@ -54,7 +52,7 @@ export default function HeroGallery() {
         spaceBetween={10}
         slidesPerView={2} // duas miniaturas visíveis
         loop
-        loopedSlides={images.length} // garante que todas participem do loop
+        loopAdditionalSlides={images.length} 
         watchSlidesProgress
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="rounded-xl"

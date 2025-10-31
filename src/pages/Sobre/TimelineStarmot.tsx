@@ -1,44 +1,32 @@
+// 📁 src/components/TimelineStarmot.tsx
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Building2, Truck, Globe2, Trophy } from "lucide-react";
 
-// Tipagem opcional para tornar reutilizável
-interface TimelineItem {
-  icon: JSX.Element;
-  year: string;
-  title: string;
-  description: string;
-  highlight?: boolean;
-}
-
-interface TimelineProps {
-  data?: TimelineItem[];
-}
-
-export default function TimelineStarmot({ data }: TimelineProps) {
-  const defaultData: TimelineItem[] = [
+export default function TimelineStarmot() {
+  const timelineData = [
     {
-      icon: <Building2 className="w-8 h-8 text-blue-600" />, 
+      icon: <Building2 className="w-8 h-8 text-blue-600" />,
       year: "1999",
       title: "Fundação da Starmot",
       description:
         "Início das atividades com foco em motores elétricos e compromisso com qualidade e confiança.",
     },
     {
-      icon: <Truck className="w-8 h-8 text-blue-600" />, 
+      icon: <Truck className="w-8 h-8 text-blue-600" />,
       year: "2010",
       title: "Início das Importações",
       description:
         "Ampliação da atuação com importação de motores de baixa potência e chave MX-15 para automação de portões.",
     },
     {
-      icon: <Globe2 className="w-8 h-8 text-blue-600" />, 
+      icon: <Globe2 className="w-8 h-8 text-blue-600" />,
       year: "Expansão",
       title: "Expansão Nacional",
       description:
         "Atuação em todo o território brasileiro, fornecendo tecnologia e suporte especializado.",
     },
     {
-      icon: <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-glow" />, 
+      icon: <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-glow" />,
       year: "Hoje",
       title: "Referência no Setor",
       description:
@@ -46,8 +34,6 @@ export default function TimelineStarmot({ data }: TimelineProps) {
       highlight: true,
     },
   ];
-
-  const timelineData = data || defaultData;
 
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
@@ -67,12 +53,20 @@ export default function TimelineStarmot({ data }: TimelineProps) {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col gap-1 ${item.highlight ? "bg-white p-4 rounded-xl shadow-md border border-yellow-400/40" : ""}`}
+              className={`relative flex flex-col gap-1 ${
+                item.highlight
+                  ? "bg-white p-4 rounded-xl shadow-md border border-yellow-400/40"
+                  : ""
+              }`}
             >
               <div className="absolute -left-14 flex items-center justify-center w-10 h-10 bg-white shadow-md rounded-full border border-blue-200">
                 {item.icon}
               </div>
-              <span className={`text-sm font-semibold ${item.highlight ? "text-yellow-600" : "text-blue-700"}`}>
+              <span
+                className={`text-sm font-semibold ${
+                  item.highlight ? "text-yellow-600" : "text-blue-700"
+                }`}
+              >
                 {item.year}
               </span>
               <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>

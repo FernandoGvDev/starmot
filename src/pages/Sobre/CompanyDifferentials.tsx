@@ -1,26 +1,15 @@
-import React from 'react';
+// 📁 src/components/CompanyDifferentials.tsx
 import { motion } from "framer-motion";
 import { Award, CheckCircle, Truck, Send, Headset } from "lucide-react";
 
-interface DifferentialItem {
-  icon: JSX.Element;
-  text: string;
-}
-
-interface CompanyDifferentialsProps {
-  items?: DifferentialItem[];
-}
-
-export default function CompanyDifferentials({ items }: CompanyDifferentialsProps) {
-  const defaultItems: DifferentialItem[] = [
+export default function CompanyDifferentials() {
+  const data = [
     { icon: <Award className="w-8 h-8 text-blue-700" />, text: "+25 anos de experiência" },
     { icon: <CheckCircle className="w-8 h-8 text-blue-700" />, text: "Produtos com alto padrão de qualidade" },
     { icon: <Truck className="w-8 h-8 text-blue-700" />, text: "Importação própria" },
     { icon: <Send className="w-8 h-8 text-blue-700" />, text: "Envios para todo o Brasil" },
     { icon: <Headset className="w-8 h-8 text-blue-700" />, text: "Suporte técnico especializado" },
   ];
-
-  const data = items || defaultItems;
 
   return (
     <section className="py-20 bg-white">
