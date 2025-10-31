@@ -2,7 +2,6 @@ import Hero from './Hero'
 import TimelineStarmot from './TimelineStarmot'
 import MissionVisionValues from './MissionVisionValues'
 import CompanyDifferentials from './CompanyDifferentials'
-import TeamSection from './TimelineStarmot'
 import LocationSection from './LocationSection'
 import ContactCTA from './ContactCTA'
 
