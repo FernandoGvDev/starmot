@@ -9,7 +9,9 @@ export default function Home() {
     <>
     <Hero />
     <PorQueConfiar />
+    <div id ='produtos' className='produtos'>
     <ProdutoMX15 />
+    </div>
     <ProdutoMotores />
     <ContatoForm />
     </>

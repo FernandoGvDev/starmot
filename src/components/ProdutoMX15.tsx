@@ -16,7 +16,7 @@ export default function ProdutoMX15() {
   };
 
   return (
-    <section className="w-full bg-white py-20 px-6 text-[#1b3357] flex flex-col items-center">
+    <section className="w-full bg-white py-20 px-6 text-[#1b3357] flex flex-col items-center" id ='produtos'>
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center mb-12">
         {/* IMAGEM */}
         <motion.img

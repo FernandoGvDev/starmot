@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+;import { motion } from "framer-motion";
 import { ShieldCheck, Award, Clock, ThumbsUp, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
