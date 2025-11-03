@@ -21,15 +21,15 @@ export default function ProdutoMotores() {
 
   const motores = [
     {
-      titulo: "Motor Elétrico 1/4 CV Ventilado",
+      titulo: "Motor Elétrico 1/4 CV",
       img: motor14IMG,
       pdf: motor14PDF,
       descricao:
-        "Motor elétrico ventilado ideal para movimentadores de portão. Alta durabilidade, segurança e desempenho para uso contínuo.",
+        "Motor elétrico ideal para movimentadores de portão. Alta durabilidade, segurança e desempenho para uso contínuo.",
       nome: "1-4cv",
     },
     {
-      titulo: "Motor Elétrico 1/3 CV Ventilado",
+      titulo: "Motor Elétrico 1/3 CV",
       img: motor13IMG,
       pdf: motor13PDF,
       descricao:
@@ -61,7 +61,7 @@ export default function ProdutoMotores() {
               onClick={() => handleDownload(motor.pdf, motor.nome)}
               className="flex items-center gap-2 bg-[#1b3357] text-white px-6 py-2 rounded-xl hover:scale-105 transition shadow-md hover:shadow-lg w-fit mb-3"
             >
-              <FaDownload size={18} /> Baixar Catálogo PDF
+              <FaDownload size={18} /> Baixar PDF
             </button>
 
             <motion.iframe

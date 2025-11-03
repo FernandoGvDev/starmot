@@ -6,14 +6,14 @@ interface SplashScreenProps {
 }
 
 export default function SplashScreen({ onFinish }: SplashScreenProps) {
-  const fullText = "Referência em soluções para motores elétricos e micro switches";
+  const fullText = "Referência em soluções para motores elétricos e micro switch";
   const [displayText, setDisplayText] = useState<string>("");
 
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      if (i < fullText.length) { // <-- pega todas as letras
-        setDisplayText(fullText.slice(0, i + 1)); // evita texto “pulando”
+      if (i < fullText.length) { 
+        setDisplayText(fullText.slice(0, i + 1)); 
         i++;
       } else {
         clearInterval(interval);

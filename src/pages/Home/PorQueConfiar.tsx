@@ -6,13 +6,13 @@ export default function PorQueConfiar() {
   const cards = [
     {
       icon: <ShieldCheck size={36} />,
-      title: "Qualidade Garantida",
-      text: "Produtos selecionados e certificados para oferecer máxima segurança e durabilidade industrial.",
+      title: "Qualidade e Garantia",
+      text: "Produto 100% testados e aprovados por STARMOT, motores com 2 anos de GARANTIA.",
     },
     {
       icon: <Award size={36} />,
       title: "Especialistas no Setor",
-      text: "Equipe com experiência em motores elétricos e micro switches industriais, garantindo orientação técnica precisa.",
+      text: "Equipe com experiência em motores elétricos e micro switch industriais, garantindo orientação técnica precisa.",
     },
     {
       icon: <Clock size={36} />,
@@ -22,7 +22,7 @@ export default function PorQueConfiar() {
     {
       icon: <ThumbsUp size={36} />,
       title: "Confiança do Mercado",
-      text: "Parcerias com indústrias e empresas que exigem alta performance e confiabilidade.",
+      text: "Parcerias com indústrias e empresas que exigem alta perfomance e confiabilidade.",
     },
   ];
 
@@ -43,7 +43,7 @@ export default function PorQueConfiar() {
           transition={{ delay: 0.2 }}
           className="text-gray-600 max-w-2xl mx-auto"
         >
-          Somos referência em soluções para motores elétricos e micro switches, unindo expertise, tecnologia e atendimento diferenciado.
+          Somos referência em soluções para motores elétricos e micro switch, unindo expertise, tecnologia e atendimento diferenciado.
         </motion.p>
       </div>
 

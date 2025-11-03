@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaWhatsapp } from "react-icons/fa";
 
-// 📁 coloque o PDF em src/assets/pdf/mx15.pdf
 import mx15pdf from "../assets/pdf/mx15.pdf";
-import mx15img from "../assets/img/mx15.jpeg"; // 📁 coloque a imagem do produto
+import mx15img from "../assets/img/mx15.jpeg";
 
 export default function ProdutoMX15() {
   const whatsappLink = `https://wa.me/555199851530?text=Olá! Gostaria de saber mais sobre o Micro Switch MX15.`;
@@ -37,8 +36,7 @@ export default function ProdutoMX15() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Micro Switch MX15</h2>
           <p className="text-gray-600 mb-6">
             O Micro Switch MX15 oferece alta durabilidade, precisão de acionamento e resistência
-            para aplicações industriais exigentes. Ideal para automação, máquinas industriais e sistemas
-            de controle elétrico.
+            para aplicações industriais exigentes. Ideal para sistemas de automação de portões, equipamentos industriais e manutenção de portões em geral.
           </p>
 
           <button
