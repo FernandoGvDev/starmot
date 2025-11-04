@@ -27,7 +27,7 @@ export default function ProdutoMotores() {
       nome: "1-4cv",
     },
     {
-      titulo: "Motor Elétrico 1/3 CV",
+      titulo: "Motor Elétrico Ventilado 1/3 CV",
       img: motor13IMG,
       pdf: motor13PDF,
       descricao:

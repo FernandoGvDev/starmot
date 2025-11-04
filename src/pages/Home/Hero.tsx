@@ -7,9 +7,7 @@ import 'swiper/swiper-bundle.css';
 const fadeLeft = { initial: { opacity: 0, x: -40 }, animate: { opacity: 1, x: 0 } };
 
 const media = [
-  '/imgHero/video1.mp4',
-  '/imgHero/img2.jpeg',
-  '/imgHero/img1.jpeg',
+  '/img/motoreseletricossorocaba-784x368.png',
 ];
 
 export default function Hero() {
