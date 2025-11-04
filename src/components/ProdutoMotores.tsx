@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaWhatsapp } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 
 // 📁 coloque os PDFs em src/assets/pdf/motor-1-4cv.pdf e motor-1-3cv.pdf
 import motor14PDF from "../assets/pdf/motor-1-4cv.pdf";
@@ -10,8 +10,6 @@ import motor14IMG from "../assets/img/motor-1-4cv.jpeg";
 import motor13IMG from "../assets/img/motor-1-3cv.jpeg";
 
 export default function ProdutoMotores() {
-  const whatsappLink = `https://wa.me/555199851530?text=Olá! Gostaria de saber mais sobre os motores elétricos para movimentadores de portão.`;
-
   const handleDownload = (file: string, nome: string) => {
     const link = document.createElement("a");
     link.href = file;
@@ -75,15 +73,6 @@ export default function ProdutoMotores() {
           </motion.div>
         ))}
       </div>
-
-      {/* CTA FINAL */}
-      <a
-        href={whatsappLink}
-        target="_blank"
-        className="mt-8 flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
-      >
-        <FaWhatsapp size={22} /> Falar com especialista agora
-      </a>
     </section>
   );
 }

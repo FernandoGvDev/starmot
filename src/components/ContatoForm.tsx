@@ -141,18 +141,52 @@ export default function ContatoForm() {
 
           {erro && <div className="text-red-600 font-medium">{erro}</div>}
 
-          <div className="flex flex-col md:flex-row items-center gap-3 mt-2">
-            <button
-              type="submit"
-              disabled={enviando}
-              className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
-            >
-              <FaWhatsapp />
-              {enviando ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
-            </button>
+          <div className="flex flex-col md:flex-row items-start gap-3 mt-2">
+  <button
+    type="submit"
+    disabled={enviando}
+    className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
+  >
+    <FaWhatsapp />
+    {enviando ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
+  </button>
 
-            <span className="text-sm text-gray-500">ou envie direto para: <strong>+55 51 9985-1530</strong></span>
-          </div>
+  <div className="flex flex-col text-sm text-gray-500">
+    <span className="font-medium text-gray-600 mb-1">ou envie direto para:</span>
+
+    <a
+      href="https://wa.me/555199851530"
+      target="_blank"
+      className="text-[#1b3357] hover:underline font-semibold"
+      rel="noopener noreferrer"
+    >
+      +55 51 9985-1530
+    </a>
+  </div>
+</div>
+<div className="flex flex-col md:flex-row items-start gap-3 mt-2">
+  <button
+    type="submit"
+    disabled={enviando}
+    className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
+  >
+    <FaWhatsapp />
+    {enviando ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
+  </button>
+
+  <div className="flex flex-col text-sm text-gray-500">
+    <span className="font-medium text-gray-600 mb-1">ou envie direto para:</span>
+    <a
+      href="https://wa.me/5551993371255"
+      target="_blank"
+      className="text-[#1b3357] hover:underline font-semibold"
+      rel="noopener noreferrer"
+    >
+      +55 51 99337-1255
+    </a>
+  </div>
+</div>
+
         </form>
       </div>
     </motion.section>
