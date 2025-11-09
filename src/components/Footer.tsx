@@ -61,22 +61,34 @@ export default function Footer() {
 
         {/* Contatos */}
         <div className="flex flex-col">
-          <h4 className="font-semibold text-lg mb-4">Contato</h4>
-          <a
-            href="https://wa.me/555199851530"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
-          >
-            <FaWhatsapp /> WhatsApp
-          </a>
-          <a
-            href="mailto:contato@starmot.com"
-            className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
-          >
-            <FaEnvelope /> Email
-          </a>
-        </div>
+  <h4 className="font-semibold text-lg mb-4">Contato</h4>
+
+  <a
+    href="https://wa.me/555199851530"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
+  >
+    <FaWhatsapp /> WhatsApp: (51) 99851-530
+  </a>
+
+  <a
+    href="https://wa.me/5551993371255"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
+  >
+    <FaWhatsapp /> WhatsApp: (51) 99337-1255
+  </a>
+
+  <a
+    href="mailto:contato@starmot.com"
+    className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
+  >
+    <FaEnvelope /> Email
+  </a>
+</div>
+
       </div>
 
       <div className="mt-12 text-center text-gray-400 text-sm">

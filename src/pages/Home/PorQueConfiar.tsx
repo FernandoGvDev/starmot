@@ -27,7 +27,7 @@ export default function PorQueConfiar() {
   ];
 
   return (
-    <section className="w-full bg-white py-20 px-6 text-[#1b3357]">
+    <section className="w-full bg-gray-600 py-20 px-6 text-white">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -35,13 +35,13 @@ export default function PorQueConfiar() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-5xl font-bold mb-4"
         >
-          Por que confiar na <span className="text-[#0d203b]">Starmot?</span>
+          Por que confiar na <span className="text-[#0154c9]">Starmot?</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-gray-100 max-w-2xl mx-auto"
         >
           Somos referência em soluções para motores elétricos e micro switch, unindo expertise, tecnologia e atendimento diferenciado.
         </motion.p>
@@ -57,7 +57,7 @@ export default function PorQueConfiar() {
             className="bg-[#f8f9fa] p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg transition cursor-default"
           >
             <div className="mb-4 text-[#1b3357]">{card.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">{card.title}</h3>
             <p className="text-gray-600 text-sm">{card.text}</p>
           </motion.div>
         ))}
