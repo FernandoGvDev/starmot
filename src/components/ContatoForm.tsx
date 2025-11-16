@@ -168,7 +168,7 @@ export default function ContatoForm() {
                 className="text-[#1b3357] hover:underline font-semibold"
                 rel="noopener noreferrer"
               >
-                Marco Romanenco
+                Dept Técnico
               </a>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function ContatoForm() {
                 className="text-[#1b3357] hover:underline font-semibold"
                 rel="noopener noreferrer"
               >
-                Assistente de Vendas
+                Vendas
               </a>
             </div>
           </div>

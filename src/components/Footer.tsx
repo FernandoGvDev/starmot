@@ -69,7 +69,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
   >
-    <FaWhatsapp /> Marco Romanenco: (51) 99851-530
+    <FaWhatsapp /> Dept Técnico: (51) 99851-530
   </a>
 
   <a
@@ -78,14 +78,14 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
   >
-    <FaWhatsapp /> Assistente de Vendas: (51) 9337-1255
+    <FaWhatsapp /> Vendas: (51) 9337-1255
   </a>
 
   <a
-    href="mailto:contato@starmot.com"
+    href="mailto:starmot@starmot.com.br"
     className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
   >
-    <FaEnvelope /> Email
+    <FaEnvelope /> Email: starmot@starmot.com.br
   </a>
 </div>
 
