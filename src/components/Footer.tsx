@@ -69,7 +69,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
   >
-    <FaWhatsapp /> WhatsApp: (51) 99851-530
+    <FaWhatsapp /> Marco Romanenco: (51) 99851-530
   </a>
 
   <a
@@ -78,7 +78,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="flex items-center gap-2 mb-2 hover:text-gray-300 transition"
   >
-    <FaWhatsapp /> WhatsApp: (51) 99337-1255
+    <FaWhatsapp /> Assistente de Vendas: (51) 9337-1255
   </a>
 
   <a

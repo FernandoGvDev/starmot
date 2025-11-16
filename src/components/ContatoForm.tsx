@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-
 
 export default function ContatoForm() {
   const [nome, setNome] = useState<string>("");
@@ -13,6 +12,10 @@ export default function ContatoForm() {
   const [erro, setErro] = useState<string | null>(null);
   const [enviando, setEnviando] = useState<boolean>(false);
 
+  // NÚMEROS CORRETOS DEFINIDOS AQUI
+  const WHATSAPP_1 = "555199851530";   // +55 51 9985-1530
+  const WHATSAPP_2 = "5551993371255";  // +55 51 99337-1255
+
   const validaEmail = (email: string) => {
     return /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
   };
@@ -22,36 +25,38 @@ export default function ContatoForm() {
   const garantirCodigoPais = (tel: string) => {
     const digitos = limpaNumero(tel);
     if (digitos.length === 0) return "";
-    // se o usuário já passou o código (começa com 55) mantém, senão prefixa 55
     return digitos.startsWith("55") ? digitos : `55${digitos}`;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setErro(null);
-
+  const enviarParaWhats = (numero: string) => {
     if (!nome.trim()) return setErro("Por favor, informe seu nome.");
-    if (!email.trim() || !validaEmail(email)) return setErro("Por favor, informe um e‑mail válido.");
-    if (!whats.trim()) return setErro("Por favor, informe um telefone/WhatsApp.");
+    if (!email.trim() || !validaEmail(email))
+      return setErro("Por favor, informe um e-mail válido.");
+    if (!whats.trim())
+      return setErro("Por favor, informe um telefone/WhatsApp.");
 
     const telefone = garantirCodigoPais(whats);
     if (!telefone) return setErro("Telefone inválido.");
 
-    const assuntoFinal = assunto === "Outro" ? assuntoOutro.trim() || "(Assunto não informado)" : assunto;
+    const assuntoFinal =
+      assunto === "Outro"
+        ? assuntoOutro.trim() || "(Assunto não informado)"
+        : assunto;
 
-    const texto = `Olá!%0A%0ANome: ${encodeURIComponent(nome)}%0AEmail: ${encodeURIComponent(
-      email
-    )}%0AWhatsApp: ${encodeURIComponent(whats)}%0AAssunto: ${encodeURIComponent(assuntoFinal)}%0A%0AMensagem:%0A${encodeURIComponent(
-      mensagem || "(Mensagem vazia)"
-    )}`;
+    const texto = `Olá!%0A%0A` +
+      `Nome: ${encodeURIComponent(nome)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `WhatsApp: ${encodeURIComponent(whats)}%0A` +
+      `Assunto: ${encodeURIComponent(assuntoFinal)}%0A%0A` +
+      `Mensagem:%0A${encodeURIComponent(mensagem || "(Mensagem vazia)")}`;
 
-    const url = `https://wa.me/${telefone}?text=${texto}`;
+    const url = `https://wa.me/${numero}?text=${texto}`;
 
     setEnviando(true);
-    // abre o WhatsApp em nova aba/janela
     window.open(url, "_blank");
     setTimeout(() => setEnviando(false), 800);
   };
+
 
   return (
     <motion.section
@@ -62,9 +67,11 @@ export default function ContatoForm() {
     >
       <div className="max-w-3xl mx-auto">
         <h3 className="text-2xl md:text-3xl font-bold mb-2">Fale com um especialista</h3>
-        <p className="text-gray-600 mb-6">Preencha o formulário e inicie uma conversa pelo WhatsApp com nossa equipe técnica.</p>
+        <p className="text-gray-600 mb-6">
+          Preencha o formulário e inicie uma conversa pelo WhatsApp com nossa equipe técnica.
+        </p>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+        <form className="grid grid-cols-1 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1">Nome *</label>
             <input
@@ -141,51 +148,55 @@ export default function ContatoForm() {
 
           {erro && <div className="text-red-600 font-medium">{erro}</div>}
 
+          {/* BOTÃO PRINCIPAL */}
           <div className="flex flex-col md:flex-row items-start gap-3 mt-2">
-  <button
-    type="submit"
-    disabled={enviando}
-    className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
-  >
-    <FaWhatsapp />
-    {enviando ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
-  </button>
+            <button
+              type="button"
+              disabled={enviando}
+              onClick={() => enviarParaWhats(WHATSAPP_1)}
+              className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
+            >
+              <FaWhatsapp />
+              {enviando ? "Abrindo WhatsApp..." : "Enviar para Marco"}
+            </button>
 
-  <div className="flex flex-col text-sm text-gray-500">
-    <span className="font-medium text-gray-600 mb-1">ou envie direto para:</span>
 
-    <a
-      href="https://wa.me/555199851530"
-      target="_blank"
-      className="text-[#1b3357] hover:underline font-semibold"
-      rel="noopener noreferrer"
-    >
-      +55 51 9985-1530
-    </a>
-  </div>
-</div>
-<div className="flex flex-col md:flex-row items-start gap-3 mt-2">
-  <button
-    type="submit"
-    disabled={enviando}
-    className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
-  >
-    <FaWhatsapp />
-    {enviando ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
-  </button>
+            <div className="flex flex-col text-sm text-gray-500">
+              <a
+                href={`https://wa.me/${WHATSAPP_1}`}
+                target="_blank"
+                className="text-[#1b3357] hover:underline font-semibold"
+                rel="noopener noreferrer"
+              >
+                Marco Romanenco
+              </a>
+            </div>
+          </div>
 
-  <div className="flex flex-col text-sm text-gray-500">
-    <span className="font-medium text-gray-600 mb-1">ou envie direto para:</span>
-    <a
-      href="https://wa.me/5551993371255"
-      target="_blank"
-      className="text-[#1b3357] hover:underline font-semibold"
-      rel="noopener noreferrer"
-    >
-      +55 51 99337-1255
-    </a>
-  </div>
-</div>
+          {/* SEGUNDO CONTATO */}
+          <div className="flex flex-col md:flex-row items-start gap-3 mt-2">
+            <button
+              type="button"
+              disabled={enviando}
+              onClick={() => enviarParaWhats(WHATSAPP_2)}
+              className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
+            >
+              <FaWhatsapp />
+              {enviando ? "Abrindo WhatsApp..." : "Enviar para Assistente"}
+            </button>
+
+
+            <div className="flex flex-col text-sm text-gray-500">
+              <a
+                href={`https://wa.me/${WHATSAPP_2}`}
+                target="_blank"
+                className="text-[#1b3357] hover:underline font-semibold"
+                rel="noopener noreferrer"
+              >
+                Assistente de Vendas
+              </a>
+            </div>
+          </div>
 
         </form>
       </div>
