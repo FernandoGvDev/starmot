@@ -52,7 +52,11 @@ export default function ProdutoMotores() {
               alt={motor.titulo}
               className="w-full max-w-sm rounded-xl shadow-lg border mb-6"
             />
-            <h2 className="text-2xl font-bold mb-2">{motor.titulo}</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 whitespace-nowrap">
+  {motor.titulo}
+</h2>
+
+
             <p className="text-gray-600 mb-4 text-sm px-4">{motor.descricao}</p>
 
             <button
