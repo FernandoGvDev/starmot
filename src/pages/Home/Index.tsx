@@ -3,6 +3,7 @@ import PorQueConfiar from './PorQueConfiar'
 import ProdutoMX15 from '../../components/ProdutoMX15'
 import ProdutoMotores from '../../components/ProdutoMotores'
 import ContatoForm from '../../components/ContatoForm'
+import CtaLigar from './CtaLigar'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
     </div>
     <ProdutoMotores />
     <ContatoForm />
+    <CtaLigar />
     </>
   );
 }
