@@ -157,20 +157,8 @@ export default function ContatoForm() {
               className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
             >
               <FaWhatsapp />
-              {enviando ? "Abrindo WhatsApp..." : "Enviar para Marco"}
+              {enviando ? "Abrindo WhatsApp..." : "Enviar para Dept Técnico"}
             </button>
-
-
-            <div className="flex flex-col text-sm text-gray-500">
-              <a
-                href={`https://wa.me/${WHATSAPP_1}`}
-                target="_blank"
-                className="text-[#1b3357] hover:underline font-semibold"
-                rel="noopener noreferrer"
-              >
-                Dept Técnico
-              </a>
-            </div>
           </div>
 
           {/* SEGUNDO CONTATO */}
@@ -182,20 +170,9 @@ export default function ContatoForm() {
               className="inline-flex items-center gap-3 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md"
             >
               <FaWhatsapp />
-              {enviando ? "Abrindo WhatsApp..." : "Enviar para Assistente"}
+              {enviando ? "Abrindo WhatsApp..." : "Enviar para Assistente de Vendas"}
             </button>
 
-
-            <div className="flex flex-col text-sm text-gray-500">
-              <a
-                href={`https://wa.me/${WHATSAPP_2}`}
-                target="_blank"
-                className="text-[#1b3357] hover:underline font-semibold"
-                rel="noopener noreferrer"
-              >
-                Vendas
-              </a>
-            </div>
           </div>
 
         </form>
