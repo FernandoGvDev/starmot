@@ -1,4 +1,4 @@
-;import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ShieldCheck, Award, Clock, ThumbsUp, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -7,29 +7,33 @@ export default function PorQueConfiar() {
     {
       icon: <ShieldCheck size={36} />,
       title: "Qualidade e Garantia",
-      text: "Produto 100% testados e aprovados por STARMOT, motores com 2 anos de GARANTIA.",
+      text: "Produtos 100% testados e aprovados pela Starmot. Motores elétricos com 2 anos de garantia e alta durabilidade.",
     },
     {
       icon: <Award size={36} />,
       title: "Especialistas no Setor",
-      text: "Equipe com experiência em motores elétricos e micro switch industriais, garantindo orientação técnica precisa.",
+      text: "Equipe experiente em motores elétricos e micro switch industriais, garantindo suporte técnico confiável.",
     },
     {
       icon: <Clock size={36} />,
       title: "Entrega Rápida e Eficiência",
-      text: "Compromisso com prazos e suporte constante para que sua operação nunca pare.",
+      text: "Atendimento ágil, prazos cumpridos e suporte constante para que sua operação industrial nunca pare.",
     },
     {
       icon: <ThumbsUp size={36} />,
       title: "Confiança do Mercado",
-      text: "Parcerias com indústrias e empresas que exigem alta perfomance e confiabilidade.",
+      text: "Parcerias com indústrias de alto padrão que exigem performance, qualidade e confiabilidade.",
     },
   ];
 
   return (
-    <section className="w-full bg-gray-600 py-20 px-6 text-white">
+    <section 
+      className="w-full bg-gray-600 py-20 px-6 text-white"
+      aria-labelledby="porque-confiar-title"
+    >
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
+          id="porque-confiar-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -37,13 +41,15 @@ export default function PorQueConfiar() {
         >
           Por que confiar na <span className="text-[#0154c9]">Starmot?</span>
         </motion.h2>
+        
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-gray-100 max-w-2xl mx-auto"
         >
-          Somos referência em soluções para motores elétricos e micro switch, unindo expertise, tecnologia e atendimento diferenciado.
+          Somos referência em <strong>motores elétricos</strong>, <strong>micro switch</strong> 
+          e soluções industriais em Porto Alegre, combinando expertise técnica, qualidade e atendimento especializado.
         </motion.p>
       </div>
 
@@ -71,6 +77,7 @@ export default function PorQueConfiar() {
       >
         <Link
           to="/sobre"
+          aria-label="Conheça a história da Starmot"
           className="inline-flex items-center gap-2 bg-[#1b3357] text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-md hover:shadow-lg"
         >
           Conheça nossa história

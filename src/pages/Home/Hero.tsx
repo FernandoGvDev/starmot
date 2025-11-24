@@ -12,7 +12,11 @@ const media = [
 
 export default function Hero() {
   return (
-    <section role="banner" className="bg-gray-100 py-20 pt-50">
+    <section 
+      role="banner" 
+      aria-label="Soluções em motores elétricos e micro switch industriais"
+      className="bg-gray-100 py-20 pt-50"
+    >
       <div className="max-w-6xl mx-auto px sm:px-6 lg:px-0 grid md:grid-cols-2 gap-10 items-center">
 
         {/* Texto */}
@@ -22,12 +26,15 @@ export default function Hero() {
           className="flex flex-col gap-6 text-left pl-3 pr-20 md:pr-0"
         >
           <h1 className="text-3xl md:text-6xl font-bold leading-tight">
-            Soluções em <span className="text-blue-800">Motores Elétricos</span> &<br />
-            Micro Switch Fim de Curso
+            Soluções em <span className="text-blue-800">Motores Elétricos</span> &
+            <br />
+            Micro Switch Fim de Curso Industriais
           </h1>
+
           <p className="text-lg max-w-md mx-auto md:mx-0">
-            Na <strong>Starmot</strong>, oferecemos produtos de alto padrão para garantir
-            performance, segurança e eficiência no seu processo de manutenção e industrial.
+            A <strong>Starmot</strong> é especializada em <strong>motores elétricos industriais</strong>, 
+            <strong> micro switch fim de curso</strong> e componentes de automação, oferecendo 
+            confiabilidade, eficiência e alto desempenho para indústrias em Porto Alegre e região.
           </p>
         </motion.div>
 
@@ -48,12 +55,14 @@ export default function Hero() {
                     autoPlay
                     muted
                     loop
+                    aria-label="Vídeo de motores elétricos industriais"
                     className="w-full h-72 md:h-80 object-cover rounded-lg"
                   />
                 ) : (
                   <img
                     src={src}
-                    alt={`Slide ${i + 1}`}
+                    alt="Motor elétrico industrial de alta performance - Starmot Porto Alegre"
+                    loading="lazy"
                     className="w-full h-72 md:h-80 object-cover rounded-lg"
                   />
                 )}

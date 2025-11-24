@@ -6,7 +6,6 @@ export default function CtaLigar() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // animação de entrada depois de pequeno delay
     const timer = setTimeout(() => setShow(true), 200);
     return () => clearTimeout(timer);
   }, []);
@@ -20,10 +19,15 @@ export default function CtaLigar() {
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="w-full flex flex-col items-center py-10 px-4 bg-gray-700 rounded-2xl shadow-xl text-white gap-4 mb-20"
+          aria-labelledby="cta-ligar-titulo"
         >
-          <h2 className="text-3xl font-bold text-center">
+          <h2
+            id="cta-ligar-titulo"
+            className="text-3xl font-bold text-center"
+          >
             Ou Ligue Diretamente
           </h2>
+
           <p className="text-lg opacity-90">Para os números</p>
 
           <div className="flex flex-col gap-3 mt-4 w-full max-w-sm">
@@ -46,9 +50,10 @@ function NumberButton({ number }: NumberButtonProps) {
   return (
     <a
       href={`tel:${tel}`}
+      aria-label={`Ligar para o número ${number}`}
       className="flex items-center justify-center gap-3 bg-white text-blue-700 font-semibold rounded-xl py-3 shadow-md hover:shadow-lg transition-all hover:scale-[1.02]"
     >
-      <FaPhoneAlt className="text-xl" />
+      <FaPhoneAlt aria-hidden="true" className="text-xl" />
       {number}
     </a>
   );
