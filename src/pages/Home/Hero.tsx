@@ -28,11 +28,11 @@ export default function Hero() {
           <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             Soluções em <span className="text-blue-800">Motores Elétricos</span> &
             <br />
-            Micro Switch Fim de Curso Industriais
+            Micro Switch Fim de Curso
           </h1>
 
           <p className="text-lg max-w-md mx-auto md:mx-0">
-            A <strong>Starmot</strong> é especializada em <strong>motores elétricos industriais</strong>, 
+            A <strong>Starmot</strong> é especializada em <strong>motores elétricos</strong>, 
             <strong> micro switch fim de curso</strong> e componentes de automação, oferecendo 
             confiabilidade, eficiência e alto desempenho para indústrias em Porto Alegre e região.
           </p>
